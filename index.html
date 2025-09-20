@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>The Armenia Nexus</title>
+  <link rel="icon" type="image/x-icon" href="img/favicon.png">
+  <meta name="description" content="The Armenia Nexus — official site of Gurgen Simonyan. Join, donate, follow events and news."/>
+  <!-- Tailwind CDN for quick prototyping -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Animated Armenian-flag background */
+    .flag-bg {
+       background-image: url("img/background.jpg");
+       background-repeat: no-repeat;
+       background-size: cover;
+       background-position: center;
+      
+    }
+    @keyframes flagWave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* small shadow helper consistent with mockup */
+    .card-shadow { box-shadow: 0 10px 30px rgba(16,24,40,0.06); }
+
+    /* Hide default scrollbar for horizontal event scroller (nice-to-have) */
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+  </style>
+</head>
+<body class="antialiased text-gray-900 bg-gray-50 font-sans">
+
+  <!-- Header -->
+  <header class="bg-white border-b sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center gap-4">
+          <!-- Editable text-logo -->
+          <a href="#"><img style="width: 150px;height: 65px;" src="img/logo.jpeg" alt=""></a>
+          
+        </div>
+
+        <nav class="hidden md:flex items-center gap-6 text-sm">
+          <a href="#about" class="hover:underline">About</a>
+          <a href="#events" class="hover:underline">Events</a>
+          <a href="#news" class="hover:underline">News</a>
+          <a href="#shop" class="hover:underline">Shop</a>
+          <a href="#donate" class="text-white bg-red-700 px-3 py-2 rounded-md shadow-sm">Donate</a>
+          <a href="#join" class="text-red-700 border border-red-700 px-3 py-2 rounded-md">Join</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <!-- language toggle -->
+          <div id="langToggle" class="flex items-center gap-1 border rounded-full px-2 py-1 text-xs">
+            <button data-lang="hy" class="px-2 font-semibold"><img s src="img/Armenian.jpg" alt=""></button>
+            <span class="h-4 w-px bg-gray-200"></span>
+            <button data-lang="en" class="px-2 text-gray-500">ENG</button>
+          </div>
+
+          <input aria-label="Search" placeholder="Search" class="hidden sm:inline-block border rounded-md px-2 py-1 text-sm" />
+
+          <button class="md:hidden p-2 rounded-md bg-gray-100">☰</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="relative overflow-hidden flag-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center py-24">
+        <div class="space-y-6 text-white">
+          <h1 class="text-4xl sm:text-5xl font-extrabold leading-tight drop-shadow-lg">The Armenia Nexus</h1>
+          <p style="color: white;padding-top: 30px;" class="max-w-xl text-lg opacity-95 drop-shadow">A new national vision rooted in civic dignity, forward-thinking policy, and global Armenian pride. Led by Gurgen Simonyan.</p>
+
+          <div class="flex gap-3">
+            <a href="#join" class="bg-white text-red-700 px-5 py-3 rounded-md font-semibold shadow">Join Us</a>
+            <a href="#donate" class="bg-red-700 text-white px-5 py-3 rounded-md font-semibold shadow">Donate</a>
+          </div>
+
+          <div class="mt-2 text-sm text-white/90">Trusted. Accountable. United.</div>
+        </div>
+
+        <div class="flex justify-center lg:justify-end">
+          <!-- Replace this src with /assets/gurgen.jpg -->
+          <img src="img/hero.jpg" alt="Gurgen Simonyan portrait" class="w-72 h-72 object-cover rounded-2xl border-4 border-white shadow-2xl card-shadow" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-10">
+
+      
+
+    <!-- ABOUT -->
+    <section id="about" class="bg-white rounded-xl p-8 card-shadow">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2">
+          <h2 class="text-2xl font-bold">About The Armenia Nexus</h2>
+          <p class="mt-3 text-gray-700 leading-relaxed">
+            We are a civic movement dedicated to building a prosperous, secure, and inclusive Armenia.
+            Our platform centers around transparency, social opportunity, and modern governance—guided by the leadership of Gurgen Simonyan.
+          </p>
+          <a href="/about" class="inline-block mt-4 text-red-700 font-semibold">Read the full story →</a>
+        </div>
+
+        <aside class="bg-gray-50 p-4 rounded-md">
+          <h3 class="font-semibold">Mission</h3>
+          <img src="img/Mission.JPG" alt="">
+          
+        </aside>
+      </div>
+    </section>
+
+    <!-- EVENTS -->
+    <section id="events" class="mt-8">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold">Upcoming Events</h3>
+        <a href="/events" class="text-sm text-gray-500">View all</a>
+      </div>
+
+      <div class="overflow-x-auto no-scrollbar py-2">
+        <div class="flex gap-4">
+          <!-- Repeatable event card; replace images / text -->
+          <article class="min-w-[260px] bg-white rounded-lg p-3 card-shadow">
+            <img src="img/event-1.JPG" alt="Event 1" class="w-full h-36 object-cover rounded-md" />
+            <h4 class="mt-3 font-semibold">Townhall — Yerevan</h4>
+            <p class="text-sm text-gray-500 mt-1">Sep 20, 2025 • Community hall</p>
+            <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/events/1">Details →</a>
+          </article>
+
+          <article class="min-w-[260px] bg-white rounded-lg p-3 card-shadow">
+            <img src="img/event-2.JPG" alt="Event 2" class="w-full h-36 object-cover rounded-md" />
+            <h4 class="mt-3 font-semibold">Meet & Greet — Vanadzor</h4>
+            <p class="text-sm text-gray-500 mt-1">Sep 28, 2025 • City Hall</p>
+            <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/events/2">Details →</a>
+          </article>
+
+          <article class="min-w-[260px] bg-white rounded-lg p-3 card-shadow">
+            <img src="img/event-3.jpg" alt="Event 3" class="w-full h-36 object-cover rounded-md" />
+            <h4 class="mt-3 font-semibold">Youth Forum — Online</h4>
+            <p class="text-sm text-gray-500 mt-1">Oct 05, 2025 • Webinar</p>
+            <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/events/3">Details →</a>
+          </article>
+
+          <article class="min-w-[260px] bg-white rounded-lg p-3 card-shadow">
+            <img src="img/event-4.JPG" alt="Event 3" class="w-full h-36 object-cover rounded-md" />
+            <h4 class="mt-3 font-semibold">Youth Forum — Online</h4>
+            <p class="text-sm text-gray-500 mt-1">Oct 05, 2025 • Webinar</p>
+            <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/events/3">Details →</a>
+          </article>
+
+          <article class="min-w-[260px] bg-white rounded-lg p-3 card-shadow">
+            <img src="img/event-5.JPG" alt="Event 3" class="w-full h-36 object-cover rounded-md" />
+            <h4 class="mt-3 font-semibold">Youth Forum — Online</h4>
+            <p class="text-sm text-gray-500 mt-1">Oct 05, 2025 • Webinar</p>
+            <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/events/3">Details →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CALL TO ACTION -->
+    <section id="join" class="mt-8 rounded-xl bg-gradient-to-r from-white to-gray-50 p-8 card-shadow">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <h3 class="text-2xl font-bold">Stand with us — Shape Armenia’s future</h3>
+          <p class="text-gray-600 mt-2">Become a member, volunteer, or donor. Every voice matters.</p>
+        </div>
+        <div class="flex gap-3">
+          <a href="/join" class="px-5 py-3 border border-red-700 rounded-md text-red-700 font-semibold">Join</a>
+          <a href="/donate" class="px-5 py-3 bg-red-700 text-white rounded-md font-semibold">Donate</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWS / PRESS -->
+    <section id="news" class="mt-8">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold">Latest News</h3>
+        <a href="/news" class="text-sm text-gray-500">See archive</a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <article class="bg-white rounded-lg p-4 card-shadow">
+          <img src="img/news-1.jpg" alt="News 1" class="w-full h-40 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Press highlight title</h4>
+          <p class="text-sm text-gray-500 mt-1">Short summary or excerpt from coverage to entice the reader to the article.</p>
+          <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/news/1">Read →</a>
+        </article>
+
+        <article class="bg-white rounded-lg p-4 card-shadow">
+          <img src="img/news-2.jpg" alt="News 2" class="w-full h-40 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Interview with Gurgen Simonyan</h4>
+          <p class="text-sm text-gray-500 mt-1">Key points from an exclusive media conversation.</p>
+          <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/news/2">Read →</a>
+        </article>
+
+        <article class="bg-white rounded-lg p-4 card-shadow">
+          <img src="img/news-3.JPG" alt="News 3" class="w-full h-40 object-cover rounded-md" />
+          <h4 class="mt-3 font-semibold">Policy brief — Economy</h4>
+          <p class="text-sm text-gray-500 mt-1">Summary of our economic policy proposals and next steps.</p>
+          <a class="mt-2 inline-block text-red-700 text-sm font-medium" href="/news/3">Read →</a>
+        </article>
+      </div>
+    </section>
+
+    <!-- SHOP / MERCH -->
+    <section id="shop" class="mt-8">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-bold">Featured Merchandise</h3>
+        <a href="/shop" class="text-sm text-gray-500">Visit store</a>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="bg-white rounded-lg p-3 text-center card-shadow">
+          <img src="img/T-shirt.jpg" alt="T-shirt" class="w-full h-32 object-contain" />
+          <h5 class="mt-2 font-medium">T-shirt — Armenia Nexus</h5>
+          <div class="mt-1 text-sm text-gray-600">$25</div>
+          <button class="mt-3 px-3 py-2 bg-red-700 text-white rounded-md text-sm">Buy</button>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 text-center card-shadow">
+          <img src="img/Ceramic Mug.jpg" alt="Mug" class="w-full h-32 object-contain" />
+          <h5 class="mt-2 font-medium">Ceramic Mug</h5>
+          <div class="mt-1 text-sm text-gray-600">$12</div>
+          <button class="mt-3 px-3 py-2 bg-red-700 text-white rounded-md text-sm">Buy</button>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 text-center card-shadow">
+          <img src="img/Ceramic Mug.jpg" alt="Cap" class="w-full h-32 object-contain" />
+          <h5 class="mt-2 font-medium">Baseball Cap</h5>
+          <div class="mt-1 text-sm text-gray-600">$18</div>
+          <button class="mt-3 px-3 py-2 bg-red-700 text-white rounded-md text-sm">Buy</button>
+        </div>
+
+        <div class="bg-white rounded-lg p-3 text-center card-shadow">
+          <img src="img/Sticker Pack.jpg" alt="Sticker" class="w-full h-32 object-contain" />
+          <h5 class="mt-2 font-medium">Sticker Pack</h5>
+          <div class="mt-1 text-sm text-gray-600">$6</div>
+          <button class="mt-3 px-3 py-2 bg-red-700 text-white rounded-md text-sm">Buy</button>
+        </div>
+      </div>
+    </section>
+
+    <br>    
+
+    <!-- CONTACT / FOOTER ROW 1 -->
+     <div><b style="font-size: 20px;">Get In Touch</b></div>
+    <section id="contact" class="mt-12 bg-white rounded-xl p-8 card-shadow">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div>
+          <h4 class="text-lg font-bold">Contact</h4>
+          <p class="text-sm text-gray-600 mt-2">Email: info@armenianexus.am<br/>Phone: +374 00 000000</p>
+
+          <div class="mt-4">
+            <h5 class="font-semibold">Follow</h5>
+            <div class="flex gap-3 mt-2 text-gray-600">
+              <a href="https://www.instagram.com/gurgensimonyan1" target="_blank" rel="noopener">Instagram</a>
+              <a href="https://www.facebook.com/GurgenSimonyan2" target="_blank" rel="noopener">Facebook</a>
+              <a href="https://www.youtube.com/@Gurgen_Simonyan" target="_blank" rel="noopener">YouTube</a>
+              <a href="​​https://www.linkedin.com/in/gurgen-simonyan-b17314309/" target="_blank" rel="noopener">linkedin</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-2">
+          <h4 class="text-lg font-bold">Send a message</h4>
+          <form class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3" onsubmit="event.preventDefault(); alert('Thanks — form not wired in this demo.');">
+            <input name="name" placeholder="Name" class="border rounded-md px-3 py-2" required />
+            <input name="email" placeholder="Email" type="email" class="border rounded-md px-3 py-2" required />
+            <textarea name="message" placeholder="Message" class="col-span-1 sm:col-span-2 border rounded-md px-3 py-2" rows="4" required></textarea>
+            <button class="col-span-1 sm:col-span-2 bg-red-700 text-white px-4 py-2 rounded-md">Send</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <br>
+
+    <footer style="background-color: #cec5ce;" class="mt-12 bg-white text-gray-700">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Row 1: 3-column grid -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Column 1: Logo + Contact -->
+      <div>
+        <!-- Party Logo -->
+        <div class="flex items-center gap-3">
+          <img style="width: 200px;height: 70px;" src="img/footer logo.png" alt="Armenia Nexus Logo" class="h-12 w-auto" />
+          
+        </div>
+
+        
+        <p>The Armenia Nexus is a modern political party led by Gurgen Simonyan, committed to national unity, progress, transparency, and democratic empowerment.</p>
+
+        <!-- Social Icons -->
+        <div class="mt-4 flex items-center gap-4">
+          <a href="https://www.facebook.com/GurgenSimonyan2" target="_blank" rel="noopener" aria-label="Facebook">
+            <!-- Facebook Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.5V12H17l-.5 3h-2.8v7A10 10 0 0 0 22 12" />
+            </svg>
+          </a>
+          <a href="https://www.instagram.com/gurgensimonyan1" target="_blank" rel="noopener" aria-label="Instagram">
+            <!-- Instagram Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.5 5.5 0 0 0 12 7.5zm0 2A3.5 3.5 0 1 1 8.5 13 3.5 3.5 0 0 1 12 9.5zm4.8-3.7a1.3 1.3 0 1 0 1.3 1.3 1.3 1.3 0 0 0-1.3-1.3z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@Gurgen_Simonyan" target="_blank" rel="noopener" aria-label="YouTube">
+            <!-- YouTube Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M21.8 8s-.2-1.5-.8-2.2c-.8-.8-1.7-.8-2.1-.9C16.7 4.7 12 4.7 12 4.7h-.1s-4.7 0-6.9.2c-.4 0-1.3.1-2.1.9C2.2 6.5 2 8 2 8s-.2 1.8-.2 3.5v1c0 1.8.2 3.5.2 3.5s.2 1.5.8 2.2c.8.8 1.9.8 2.4.9 1.8.2 7 .2 7 .2s4.7 0 6.9-.2c.4 0 1.3-.1 2.1-.9.6-.7.8-2.2.8-2.2s.2-1.7.2-3.5v-1c0-1.8-.2-3.5-.2-3.5zM9.7 14.6V9.4l5.6 2.6-5.6 2.6z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/gurgen-simonyan-b17314309/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <!-- LinkedIn Icon -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-500 hover:text-gray-800" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20.45 20.45h-3.6v-5.6c0-1.34-.03-3.06-1.87-3.06-1.87 0-2.16 1.46-2.16 2.96v5.7H9.2V9h3.46v1.56h.05c.48-.9 1.64-1.86 3.38-1.86 3.61 0 4.28 2.37 4.28 5.45v6.3zM5.34 7.43a2.09 2.09 0 1 1 0-4.18 2.09 2.09 0 0 1 0 4.18zM7.13 20.45H3.56V9h3.57v11.45z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Column 2: Quick Links -->
+      <nav aria-label="Footer navigation">
+        <h4 style="padding-left:75px ;" class="text-lg font-semibold text-gray-900">Quick Links</h4>
+        <ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-gray-600">
+          <li><a href="/about" class="hover:underline">About</a></li>
+          <li><a href="/events" class="hover:underline">Events</a></li>
+          <li><a href="/news" class="hover:underline">News</a></li>
+          <li><a href="/join" class="hover:underline">Join</a></li>
+          <li><a href="/donate" class="hover:underline">Donate</a></li>
+          <li><a href="/shop" class="hover:underline">Shop</a></li>
+        </ul>
+      </nav>
+
+      <!-- Column 3: Newsletter -->
+      <div>
+        <h4 class="text-lg font-semibold text-gray-900">Stay Informed</h4>
+        <p class="mt-3 text-sm text-gray-600">Subscribe to our newsletter for updates.</p>
+        <form class="mt-4" onsubmit="event.preventDefault(); alert('Demo only. Connect to Mailchimp/SendGrid.');">
+          <div class="flex gap-2">
+            <input type="email" required placeholder="Your email" class="w-full border rounded-md px-3 py-2 text-sm" />
+            <button type="submit" class="px-4 py-2 bg-red-700 text-white rounded-md text-sm">Subscribe</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 2 -->
+  <div class="border-t bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        
+        <p class="text-xs text-gray-600">© <span id="footerYear"></span> The Armenia Nexus || Developed By WebDevTaslima || All rights reserved.</p>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <a href="/privacy" class="text-gray-600 hover:underline">Privacy</a>
+        <a href="/terms" class="text-gray-600 hover:underline">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('footerYear').textContent = new Date().getFullYear();
+</script>
+    
+
+  </main>
+
+  <!-- Small JS for language toggle + year -->
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Language toggle basic UI behavior (no translation logic)
+    (function() {
+      const container = document.getElementById('langToggle');
+      if (!container) return;
+      container.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-lang]');
+        if (!btn) return;
+        // Visual toggle
+        Array.from(container.querySelectorAll('button[data-lang]')).forEach(b => {
+          b.classList.remove('font-semibold');
+          b.classList.add('text-gray-500');
+        });
+        btn.classList.add('font-semibold');
+        btn.classList.remove('text-gray-500');
+
+        // If you later implement translations, use btn.dataset.lang to switch content
+        // Example: load JSON for 'hy' or 'en' and replace text nodes.
+      });
+    })();
+  </script>
+</body>
+</html>
